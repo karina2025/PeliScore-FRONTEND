@@ -1,0 +1,10 @@
+:root{
+    --color-1: #eee;
+}
+
+@font-face{
+
+    font-family:'Matemasie-Regular' ;
+     src: url("../storage/fonts/Matemasie-Regular.ttf");
+     
+}
