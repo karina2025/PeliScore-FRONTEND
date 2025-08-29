@@ -4,7 +4,7 @@ body, html {
     margin: 0;
     padding: 0;
     height: 100%;
-    font-family:'Matemasie-Regular' ;
+    font-family:'RubikVinyl-Regular' ;
     overflow: hidden; /* Oculta el desbordamiento si el video es más grande que la pantalla */
 }
 
@@ -39,14 +39,14 @@ body, html {
 .logo h1 {
 
     font-size: 5em;
-    font-family:'Matemasie-Regular' ;
+    font-family:'RubikVinyl-Regular' ;
     margin: 0;
     color: #3b2783; /* Color rojo para el "Movie" */
     letter-spacing: 0.1em;
 }
 
 .logo p {
-    font-family: 'Matemasie-Regular' ;
+    font-family: 'Fredoka-VariableFont' ;
     font-size: 1.5em;
     margin: 0;
     letter-spacing: 0.5em;
@@ -58,12 +58,13 @@ body, html {
     padding: 15px 30px;
     font-size: 1.2em;
     font-weight: bold;
-    color: white;
+    color: #000;
     background-color: #3b2783;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+     font-family: 'Fredoka-VariableFont' ;
 }
 
 #main-button:hover {
