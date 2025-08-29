@@ -14,13 +14,29 @@
 }
 
 body {
-    background-image: url('../storage/img/Edna\ Mode.jpeg');
-    font-family:'RubikVinyl-Regular';
+    font-family:'Fredoka-VariableFont';
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
+}
+
+/* Contenedor del video */
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Envía el video al fondo */
+    overflow: hidden;
+}
+
+#bg-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que el video cubra toda el área */
 }
 
 .login-container {
@@ -31,7 +47,7 @@ body {
 }
 
 .login-box {
-    background-color:#f2f2f2;
+    background-color:#e3d3fb;
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -68,18 +84,18 @@ h2 {
 .btn {
     width: 100%;
     padding: 10px;
-    background-color:#104770; 
+    background-color:#3b2783; 
     border: none;
     border-radius: 5px;
     color: #000000;
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s;
-    font-family:'concertOne';
+    font-family:'Fredoka-VariableFont';
 }
 
 .btn:hover {
-    background-color:#9eb1c0; 
+    background-color:#936bb4; 
 }
 
 .botones-contenedor {
