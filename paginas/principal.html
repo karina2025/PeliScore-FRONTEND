@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peliscore - Películas</title>
+    <link rel="stylesheet" href="../css/principal.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <h1 class="logo">PELISCORE</h1>
+        <nav class="nav-menu">
+    <div class="dropdown">
+        <button class="nav-item dropbtn" id="category-btn">Categorías</button>
+        <div class="dropdown-content" id="category-menu">
+            <a href="#" data-category="Accion">Acción</a>
+            <a href="#" data-category="Comedia">Comedia</a>
+            <a href="#" data-category="Drama">Drama</a>
+            <a href="#" data-category="SciFi">Ciencia Ficción</a>
+            </div>
+    </div>
+</nav>
+    </header>
+
+    <main class="main-content-area">
+        <section class="featured-movie">
+            <video autoplay muted loop class="background-video">
+                <source src="../storage/img/fondosonic.mp4" type="video/mp4">
+            </video>
+            <div class="overlay"></div>
+            <div class="movie-info">
+                <h2 id="movieTitle" class="movie-title">Título de la Película</h2>
+                <p id="movieDescription" class="movie-description">
+                   descripcion de la pelicula
+                </p>
+                <div class="actions">
+                    <button id="likeButton" class="action-button secondary-button">Me Gusta</button>
+                    <button id="dislikeButton" class="action-button secondary-button"> No Me Gusta</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="comments-section">
+            <div class="comments-container">
+                <h3>Comentarios</h3>
+                <form id="commentForm" class="comment-form">
+                    <textarea id="commentText" placeholder="Deja tu comentario"></textarea>
+                    <button type="submit">Enviar</button>
+                </form>
+                <div id="commentList" class="comment-list">
+                    <div class="comment-item">
+                        <p class="comment-author">Usuario Demo</p>
+                        <p class="comment-text">una caca la pelicula</p>
+                        <div class="comment-actions">
+                            <button class="edit-btn">Editar</button>
+                            <button class="delete-btn">Eliminar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="movie-carousels">
+            <h3>Películas Populares</h3>
+            <div class="carousel-container" id="popularMovies">
+                <div class="movie-card">
+                    <img src="https://i.pinimg.com/1200x/a9/7d/26/a97d26449214bb756c75b4ed88d7b06e.jpg" alt="Pelicula 1">
+                    <div class="card-info">Pelicula 1</div>
+                </div>
+                <div class="movie-card">
+                    <img src="https://i.pinimg.com/1200x/a9/7d/26/a97d26449214bb756c75b4ed88d7b06e.jpg" alt="Pelicula 2">
+                    <div class="card-info">Pelicula 2</div>
+                </div>
+                </div>
+        </section>
+
+    </main>
+<script src="../javascript/principal.js"></script>
+</body>
+</html>

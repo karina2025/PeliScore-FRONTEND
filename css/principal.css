@@ -1,0 +1,353 @@
+@import url(../css/variables.css);
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+
+
+/* --- Estilos Generales y Reseteo --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #121212;
+    color: #f5f5f5;
+}
+
+/* --- Encabezado y Navegación --- */
+.main-header {
+    position: fixed;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: rgba(18, 18, 18, 0.7);
+    z-index: 100;
+}
+
+.logo {
+    font-size: 1.5rem;
+    color: #3b2783;
+    font-weight: 700;
+}
+
+.nav-menu .nav-item {
+    color: #f5f5f5;
+    text-decoration: none;
+    margin-left: 2rem;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.nav-menu .nav-item:hover {
+    color: #3b2783;
+}
+
+/* --- Sección Destacada con Video --- */
+.featured-movie {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.background-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    z-index: -2;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: -1;
+}
+
+.movie-info {
+    z-index: 1;
+    max-width: 800px;
+    padding: 2rem;
+}
+
+.movie-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    font-family:'Fredoka-VariableFont'
+}
+
+.movie-description {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.action-button {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.primary-button {
+    background-color:#3b2783;
+    color: #fff;
+}
+
+.primary-button:hover {
+    background-color: #3b2783;
+}
+
+.secondary-button {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.secondary-button:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+/* --- Sección de Comentarios --- */
+.comments-section {
+    background-color: #1a1a1a;
+    padding: 3rem 2rem;
+    background: #3b2783;
+}
+
+.comments-container {
+    max-width: 800px;
+    margin: 0 auto;
+    
+}
+
+.comments-section h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.comment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.comment-form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: #2c2c2c;
+    border: 1px solid #444;
+    border-radius: 5px;
+    color: #f5f5f5;
+    resize: vertical;
+}
+
+.comment-form button {
+    padding: 0.8rem 1.5rem;
+    background-color: #3b2783;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-weight: 700;
+    cursor: pointer;
+    align-self: flex-end;
+}
+
+.comment-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.comment-item {
+    background-color: #2c2c2c;
+    padding: 1rem;
+    border-radius: 8px;
+    font-family:'Fredoka-VariableFont'
+    
+}
+
+.comment-author {
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.comment-text {
+    line-height: 1.5;
+    font-family:'Fredoka-VariableFont'
+}
+
+.comment-actions {
+    margin-top: 1rem;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.comment-actions button {
+    background: none;
+    border: none;
+    color: #3b2783;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+
+/* --- Carruseles de Películas --- */
+.movie-carousels {
+    padding: 3rem 0;
+    background-color: #121212;
+    background: #3b2783;
+}
+
+.movie-carousels h3 {
+    font-size: 1.8rem;
+    margin-left: 2rem;
+    margin-bottom: 1.5rem;
+    font-family:'Fredoka-VariableFont'
+}
+
+.carousel-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 1.5rem;
+    padding: 0 2rem;
+    scroll-snap-type: x mandatory;
+}
+
+.carousel-container::-webkit-scrollbar {
+    display: none;
+}
+
+.movie-card {
+    flex: 0 0 auto;
+    width: 200px;
+    scroll-snap-align: start;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.movie-card:hover {
+    transform: scale(1.05);
+}
+
+.movie-card img {
+    width: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.card-info {
+    font-weight: 700;
+    margin-top: 0.5rem;
+    text-align: center;
+}
+
+
+/* Estilos para el Dropdown */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 1rem;
+    color: #f5f5f5;
+    transition: color 0.3s;
+    font-family: inherit; /* Asegura que la fuente sea la misma */
+}
+
+.dropbtn:hover {
+    color: #e50914;
+}
+
+.dropdown-content {
+    display: none; /* Esto oculta el menú */
+    position: absolute;
+    background-color: #1a1a1a;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5);
+    z-index: 10;
+    left: 50%;
+    transform: translateX(-50%); /* Centra el menú horizontalmente */
+    top: 100%; /* Lo coloca justo debajo del botón */
+    border-radius: 5px;
+    padding: 0.5rem 0;
+}
+
+.dropdown-content a {
+    color: #f5f5f5;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    transition: background-color 0.3s;
+}
+
+.dropdown-content a:hover {
+    background-color: #2c2c2c;
+}
+
+/* Esta clase es la que el JavaScript agregará para mostrar el menú */
+.dropdown-content.show {
+    display: block;
+}
+
+/* --- Media Queries (Responsividad) --- */
+@media (max-width: 768px) {
+    .main-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .nav-menu {
+        margin-top: 1rem;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+    }
+    .nav-menu .nav-item {
+        margin-left: 0;
+    }
+
+    .movie-title {
+        font-size: 2.5rem;
+    }
+    
+    .movie-description {
+        font-size: 1rem;
+    }
+
+    .movie-card {
+        width: 150px;
+    }
+}
