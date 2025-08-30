@@ -5,8 +5,6 @@
     margin: 0;
 }
 
-
-
 /* --- Estilos Generales y Reseteo --- */
 * {
     box-sizing: border-box;
@@ -140,7 +138,7 @@ body {
 .comments-section {
     background-color: #1a1a1a;
     padding: 3rem 2rem;
-    background: #3b2783;
+    background: #936bb4;
 }
 
 .comments-container {
@@ -284,7 +282,7 @@ body {
     font-size: 1rem;
     color: #f5f5f5;
     transition: color 0.3s;
-    font-family: inherit; /* Asegura que la fuente sea la misma */
+    
 }
 
 .dropbtn:hover {
@@ -350,4 +348,96 @@ body {
     .movie-card {
         width: 150px;
     }
+}
+
+
+/* Estilos para el ranking de la película */
+.movie-rating-score {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #ffd700; /* Color dorado para el ranking */
+    margin-bottom: 1rem;
+}
+
+/* Estilos para el sistema de estrellas en el formulario */
+.rating-input {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.stars {
+    display: inline-block;
+    unicode-bidi: bidi-override;
+    direction: rtl; /* Para que las estrellas se alinien de derecha a izquierda */
+    font-size: 2rem;
+    color: #888; /* Color de las estrellas sin seleccionar */
+}
+
+.stars .star {
+    display: inline-block;
+    cursor: pointer;
+}
+
+/* Estilo para las estrellas al pasar el mouse por encima o cuando están seleccionadas */
+.stars .star:hover,
+.stars .star:hover ~ .star,
+.stars .star.selected,
+.stars .star.selected ~ .star {
+    color: #ffd700; /* Color dorado para el hover y la selección */
+}
+
+/* Nuevos Estilos para Comentarios Individuales */
+.comment-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.comment-rating-score {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #ffd700;
+}
+
+.comment-actions {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.comment-actions button {
+    background: none;
+    border: none;
+    color: #f5f5f5;
+    cursor: pointer;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.3s;
+}
+
+.comment-actions .like-review-btn:hover {
+    color: #28a745; /* Verde */
+}
+
+.comment-actions .dislike-review-btn:hover {
+    color: #dc3545; /* Rojo */
+}
+
+/* Estilo para los botones cuando están activos (JavaScript los agregará) */
+.comment-actions .like-review-btn.active {
+    color: #28a745;
+}
+
+.comment-actions .dislike-review-btn.active {
+    color: #dc3545;
+}
+
+/* Estilos para el nuevo menú de ordenamiento */
+.sort-dropdown .dropdown-content {
+    min-width: 180px;
 }

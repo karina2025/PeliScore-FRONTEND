@@ -5,22 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Peliscore - Películas</title>
     <link rel="stylesheet" href="../css/principal.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <header class="main-header">
         <h1 class="logo">PELISCORE</h1>
         <nav class="nav-menu">
-    <div class="dropdown">
-        <button class="nav-item dropbtn" id="category-btn">Categorías</button>
-        <div class="dropdown-content" id="category-menu">
-            <a href="#" data-category="Accion">Acción</a>
-            <a href="#" data-category="Comedia">Comedia</a>
-            <a href="#" data-category="Drama">Drama</a>
-            <a href="#" data-category="SciFi">Ciencia Ficción</a>
+            <div class="dropdown">
+                <button class="nav-item dropbtn" id="category-btn">Categorías</button>
+                <div class="dropdown-content" id="category-menu">
+                    <a href="#" data-category="Accion">Acción</a>
+                    <a href="#" data-category="Comedia">Comedia</a>
+                    <a href="#" data-category="Drama">Drama</a>
+                    <a href="#" data-category="SciFi">Ciencia Ficción</a>
+                </div>
             </div>
-    </div>
-</nav>
+            <div class="dropdown sort-dropdown">
+                <button class="nav-item dropbtn" id="sort-btn">Ordenar por</button>
+                <div class="dropdown-content" id="sort-menu">
+                    <a href="#" data-sort="ranking">Ranking</a>
+                    <a href="#" data-sort="popularidad">Popularidad</a>
+                </div>
+            </div>
+        </nav>
     </header>
 
     <main class="main-content-area">
@@ -31,8 +39,11 @@
             <div class="overlay"></div>
             <div class="movie-info">
                 <h2 id="movieTitle" class="movie-title">Título de la Película</h2>
+                <div class="movie-rating-score">
+                    <span>-</span> / 10
+                </div>
                 <p id="movieDescription" class="movie-description">
-                   descripcion de la pelicula
+                    descripcion de la pelicula
                 </p>
                 <div class="actions">
                     <button id="likeButton" class="action-button secondary-button">Me Gusta</button>
@@ -45,16 +56,38 @@
             <div class="comments-container">
                 <h3>Comentarios</h3>
                 <form id="commentForm" class="comment-form">
+                    <div class="rating-input">
+                        <div class="stars" id="review-stars">
+                            <span class="star" data-rating="1">★</span>
+                            <span class="star" data-rating="2">★</span>
+                            <span class="star" data-rating="3">★</span>
+                            <span class="star" data-rating="4">★</span>
+                            <span class="star" data-rating="5">★</span>
+                            <span class="star" data-rating="6">★</span>
+                            <span class="star" data-rating="7">★</span>
+                            <span class="star" data-rating="8">★</span>
+                            <span class="star" data-rating="9">★</span>
+                            <span class="star" data-rating="10">★</span>
+                        </div>
+                        <input type="hidden" id="rating" name="rating" value="0">
+                    </div>
                     <textarea id="commentText" placeholder="Deja tu comentario"></textarea>
                     <button type="submit">Enviar</button>
                 </form>
                 <div id="commentList" class="comment-list">
                     <div class="comment-item">
-                        <p class="comment-author">Usuario Demo</p>
+                        <div class="comment-header">
+                            <p class="comment-author">Usuario Demo</p>
+                            <div class="comment-rating-score">
+                                <span>8.5</span> / 10
+                            </div>
+                        </div>
                         <p class="comment-text">una caca la pelicula</p>
                         <div class="comment-actions">
                             <button class="edit-btn">Editar</button>
                             <button class="delete-btn">Eliminar</button>
+                            <button class="like-review-btn">👍 <span>0</span></button>
+                            <button class="dislike-review-btn">👎 <span>0</span></button>
                         </div>
                     </div>
                 </div>
@@ -72,10 +105,10 @@
                     <img src="https://i.pinimg.com/1200x/a9/7d/26/a97d26449214bb756c75b4ed88d7b06e.jpg" alt="Pelicula 2">
                     <div class="card-info">Pelicula 2</div>
                 </div>
-                </div>
+            </div>
         </section>
 
     </main>
-<script src="../javascript/principal.js"></script>
+    <script src="../javascript/principal.js"></script>
 </body>
 </html>
