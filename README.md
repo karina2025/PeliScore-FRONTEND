@@ -38,6 +38,10 @@ Interacción: Al hacer clic en una película del carrusel, main.js pide los deta
 
 ##  Conexión con el Backend
 
+ [**Link al repositorio del Backend**](https://github.com/NicolasFernandoEspitiaCastillo/PeliScore)
+
+
+
 Este frontend está diseñado para funcionar en conjunto con el siguiente backend, que es el que provee la API para todas las operaciones de tareas y autenticación.
 
 
