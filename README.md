@@ -35,3 +35,12 @@ Inicio de Sesión: El usuario ingresa sus credenciales.
 Carga de Películas: Después del login, main.js hace una llamada a la API (GET /api/peliculas) para obtener la lista de películas y las muestra en la página principal.
 
 Interacción: Al hacer clic en una película del carrusel, main.js pide los detalles de esa película a la API (GET /api/peliculas/{id}) y actualiza la sección destacada de la página.
+
+##  Conexión con el Backend
+
+Este frontend está diseñado para funcionar en conjunto con el siguiente backend, que es el que provee la API para todas las operaciones de tareas y autenticación.
+
+
+## integrantes 
+karina sanabria casas
+
