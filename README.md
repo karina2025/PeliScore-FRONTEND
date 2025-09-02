@@ -47,4 +47,6 @@ Este frontend está diseñado para funcionar en conjunto con el siguiente backen
 
 ## integrantes 
 karina sanabria casas
+Nicolas fernando espitia
+
 
