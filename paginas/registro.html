@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/cuenta.css">
+</head>
+<body>
+    <body>
+        <div class="video-background">
+        <video autoplay muted loop id="bg-video">
+            <source src="../storage/img/fondo amongus.mp4" type="video/mp4">
+            Tu navegador no soporta el video.
+        </video>
+    </div>
+     <div class="overlay"></div>
+  <div class="login-container">
+    <h1 class="logo">PELISCORE</h1>
+    
+    <form id="registerForm">
+      <h2>Crear Cuenta</h2>
+
+      <input type="text" id="username" placeholder="Nombre de usuario" required />
+      <input type="email" id="email" placeholder="Correo electrónico" autocomplete="email" required />
+      <input type="password" id="password" placeholder="Contraseña" autocomplete="new-password" required />
+      
+      <p id="message"></p>
+
+      <button type="submit">Registrar</button>
+
+      <p class="toggle">
+        ¿Ya tienes cuenta?
+        <a href="login.html">Inicia sesión aquí</a>
+      </p>
+    </form>
+  </div>
+
+  <script src="js/register.js" defer></script>
+</body>
+</html>

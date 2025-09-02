@@ -1,114 +1,242 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Peliscore - Películas</title>
-    <link rel="stylesheet" href="../css/principal.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PELISCORE</title>
+  <link rel="stylesheet" href="../css/principal.css">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+  <!-- Header Navigation -->
+  <header class="header">
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="nav-brand">
+          <a href="principal.html" class="logo">
+            <h1>PELISCORE</h1>
+          </a>
+        </div>
+        
+        <div class="nav-links">
+          <a href="principal.html" class="nav-link active">Películas</a>
+          <a href="#" class="nav-link">Series</a>
+          <a href="#" class="nav-link">Personas</a>
+          <a href="#" class="nav-link">Más</a>
+        </div>
 
-    <header class="main-header">
-        <h1 class="logo">PELISCORE</h1>
-        <nav class="nav-menu">
-            <div class="dropdown">
-                <button class="nav-item dropbtn" id="category-btn">Categorías</button>
-                <div class="dropdown-content" id="category-menu">
-                    <a href="#" data-category="Accion">Acción</a>
-                    <a href="#" data-category="Comedia">Comedia</a>
-                    <a href="#" data-category="Drama">Drama</a>
-                    <a href="#" data-category="SciFi">Ciencia Ficción</a>
-                </div>
+        <div class="nav-actions">
+          <div class="search-container">
+            <input type="text" id="global-search" class="search-input" placeholder="Buscar películas, series, personas...">
+            <button class="search-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="m21 21-4.35-4.35"></path>
+              </svg>
+            </button>
+          </div>
+          
+          <div class="auth-section">
+            <div id="auth-buttons" class="auth-buttons">
+              <a href="login.html" class="btn btn-outline">Iniciar Sesión</a>
+              <a href="registro.html" class="btn btn-primary">Registrarse</a>
             </div>
-            <div class="dropdown sort-dropdown">
-                <button class="nav-item dropbtn" id="sort-btn">Ordenar por</button>
-                <div class="dropdown-content" id="sort-menu">
-                    <a href="#" data-sort="ranking">Ranking</a>
-                    <a href="#" data-sort="popularidad">Popularidad</a>
+            
+            <div id="user-menu" class="user-menu" style="display: none;">
+              <div class="user-avatar">
+                <span id="username-display">U</span>
+              </div>
+              <div class="user-dropdown">
+                <div class="dropdown-content">
+                  <a href="#" class="dropdown-item">PERFIL</a>
+                  <a href="#" class="dropdown-item">LISTAS</a>
+                  <a href="#" class="dropdown-item">Mis calificaciones</a>
+                  <div id="admin-section" style="display: none;">
+                    <hr>
+                    <a href="administrador.html" class="dropdown-item">ADMIN</a>
+                  </div>
+                  <hr>
+                  <a href="#" id="logout-btn" class="dropdown-item">Cerrar Sesión</a>
                 </div>
+              </div>
             </div>
-        </nav>
-    </header>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
 
-    <main class="main-content-area">
-        <section class="featured-movie">
-            <video autoplay muted loop class="background-video">
-                <source src="../storage/img/fondosonic.mp4" type="video/mp4">
-            </video>
-            <div class="overlay"></div>
-            <div class="movie-info">
-                <h2 id="movieTitle" class="movie-title">Título de la Película</h2>
-                <div class="movie-rating-score">
-                    <span>-</span> / 10
-                </div>
-                <p id="movieDescription" class="movie-description">
-                    descripcion de la pelicula
-                </p>
-                <div class="actions">
-                    <button id="likeButton" class="action-button secondary-button">Me Gusta</button>
-                    <button id="dislikeButton" class="action-button secondary-button"> No Me Gusta</button>
-                </div>
-            </div>
-        </section>
+  <!-- Hero Banner -->
+  <section class="hero-banner">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1 class="hero-title">Bienvenido.</h1>
+        <h2 class="hero-subtitle">explora las peliculas que quieras</h2>
+        <div class="hero-search">
+          <input type="text" id="hero-search-input" placeholder="Buscar una película, serie, persona...">
+          <button id="hero-search-btn" class="search-btn-hero">Buscar</button>
+        </div>
+      </div>
+    </div>
+    <div class="hero-background">
+      <div class="hero-gradient"></div>
+    </div>
+  </section>
 
-        <section class="comments-section">
-            <div class="comments-container">
-                <h3>Comentarios</h3>
-                <form id="commentForm" class="comment-form">
-                    <div class="rating-input">
-                        <div class="stars" id="review-stars">
-                            <span class="star" data-rating="1">★</span>
-                            <span class="star" data-rating="2">★</span>
-                            <span class="star" data-rating="3">★</span>
-                            <span class="star" data-rating="4">★</span>
-                            <span class="star" data-rating="5">★</span>
-                            <span class="star" data-rating="6">★</span>
-                            <span class="star" data-rating="7">★</span>
-                            <span class="star" data-rating="8">★</span>
-                            <span class="star" data-rating="9">★</span>
-                            <span class="star" data-rating="10">★</span>
-                        </div>
-                        <input type="hidden" id="rating" name="rating" value="0">
-                    </div>
-                    <textarea id="commentText" placeholder="Deja tu comentario"></textarea>
-                    <button type="submit">Enviar</button>
-                </form>
-                <div id="commentList" class="comment-list">
-                    <div class="comment-item">
-                        <div class="comment-header">
-                            <p class="comment-author">Usuario Demo</p>
-                            <div class="comment-rating-score">
-                                <span>8.5</span> / 10
-                            </div>
-                        </div>
-                        <p class="comment-text">una caca la pelicula</p>
-                        <div class="comment-actions">
-                            <button class="edit-btn">Editar</button>
-                            <button class="delete-btn">Eliminar</button>
-                            <button class="like-review-btn">👍 <span>0</span></button>
-                            <button class="dislike-review-btn">👎 <span>0</span></button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+  <!-- Trending Section -->
+  <section class="content-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-title-container">
+          <h2 class="section-title">Tendencias</h2>
+          <div class="section-switcher">
+            <button class="switcher-btn active" data-period="today">..</button>
+            <button class="switcher-btn" data-period="week">..</button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="horizontal-scroll">
+        <div id="trending-movies" class="movie-cards-container">
+          <!-- Películas trending se cargan aquí -->
+          <div class="loading-cards">
+            <div class="movie-card-skeleton"></div>
+            <div class="movie-card-skeleton"></div>
+            <div class="movie-card-skeleton"></div>
+            <div class="movie-card-skeleton"></div>
+            <div class="movie-card-skeleton"></div>
+            <div class="movie-card-skeleton"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <section class="movie-carousels">
-            <h3>Películas Populares</h3>
-            <div class="carousel-container" id="popularMovies">
-                <div class="movie-card">
-                    <img src="https://i.pinimg.com/1200x/a9/7d/26/a97d26449214bb756c75b4ed88d7b06e.jpg" alt="Pelicula 1">
-                    <div class="card-info">Pelicula 1</div>
-                </div>
-                <div class="movie-card">
-                    <img src="https://i.pinimg.com/1200x/a9/7d/26/a97d26449214bb756c75b4ed88d7b06e.jpg" alt="Pelicula 2">
-                    <div class="card-info">Pelicula 2</div>
-                </div>
-            </div>
-        </section>
+  <!-- Popular Section -->
+  <section class="content-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-title-container">
+          <h2 class="section-title"></h2>
+          <div class="section-switcher">
+            <button class="switcher-btn active" data-type="movies">Películas</button>
+            <button class="switcher-btn" data-type="tv">Series</button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="horizontal-scroll">
+        <div id="popular-movies" class="movie-cards-container">
+          <!-- Películas populares se cargan aquí -->
+          <div class="loading-cards">
+            <div class="movie-card-skeleton"></div>
+            <div class="movie-card-skeleton"></div>
+            <div class="movie-card-skeleton"></div>
+            <div class="movie-card-skeleton"></div>
+            <div class="movie-card-skeleton"></div>
+            <div class="movie-card-skeleton"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    </main>
-    <script src="../javascript/principal.js"></script>
+  <!-- Free to Watch Section -->
+  <section class="content-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-title-container">
+          <h2 class="section-title">Agregadas Recientemente</h2>
+          <div class="section-switcher">
+            <button class="switcher-btn active" data-category="all">Todas</button>
+            <button class="switcher-btn" data-category="movies">Películas</button>
+            <button class="switcher-btn" data-category="tv">Series</button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="horizontal-scroll">
+        <div id="recent-movies" class="movie-cards-container">
+          <!-- Películas recientes se cargan aquí -->
+          <div class="loading-cards">
+            <div class="movie-card-skeleton"></div>
+            <div class="movie-card-skeleton"></div>
+            <div class="movie-card-skeleton"></div>
+            <div class="movie-card-skeleton"></div>
+            <div class="movie-card-skeleton"></div>
+            <div class="movie-card-skeleton"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <h3>PELISCORE</h3>
+          <p>opina y ve las reseñas de los demas </p>
+        </div>
+        
+        <div class="footer-links-grid">
+          <div class="footer-column">
+            <h4>Lo Básico</h4>
+            <ul>
+              <li><a href="#"></a></li>
+              <li><a href="#">Contactar</a></li>
+              <li><a href="#"></a></li>
+              <li><a href="#">API</a></li>
+            </ul>
+          </div>
+          
+          <div class="footer-column">
+            <h4>Participar</h4>
+            <ul>
+              <li><a href="#"></a></li>
+              <li><a href="#">Agregar Nueva Película</a></li>
+              <li><a href="#">Agregar Nueva Serie</a></li>
+            </ul>
+          </div>
+          
+          <div class="footer-column">
+            <h4>Comunidad</h4>
+            <ul>
+              <li><a href="#">Lineamientos</a></li>
+              <li><a href="#"></a></li>
+              <li><a href="#"></a></li>
+            </ul>
+          </div>
+          
+          <div class="footer-column">
+            <h4>Legal</h4>
+            <ul>
+              <li><a href="#">Términos de Uso</a></li>
+              <li><a href="#">API Términos de Uso</a></li>
+              <li><a href="#">Política de Privacidad</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; PELISCORE sin terminar :c</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Loading Overlay -->
+  <div id="loading-overlay" class="loading-overlay" style="display: none;">
+    <div class="loading-spinner">
+      <div class="spinner"></div>
+      <p>Cargando contenido...</p>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/api.js"></script>
+  <script src="js/index.js"></script>
 </body>
 </html>

@@ -13,29 +13,41 @@
             Tu navegador no soporta el video.
         </video>
     </div>
-    <div class="login-container">
-        <div class="login-box">
-            <h1>PELISCORE</h1>
-            <h2>Registrate</h2>
+      <div class="overlay"></div>
+  <div class="login-container">
+    <h1 class="logo">GeekMovies</h1>
+    
+    <form id="loginForm">
+      <h2>Iniciar Sesión</h2>
 
-            <!-- form -->
-            <form id="login-container">
-                <div class="input-group">
-                    <input type="email" id="login-email" name="user" placeholder="Correo" required>
-                </div>
-                <div class="input-group">
-                    <input type="password" id="login-password" name="contrasena" placeholder="Contraseña" required>
-                </div>
-                <p class="error" id="login-error"></p>
+      <input 
+        type="email" 
+        id="email" 
+        name="email" 
+        placeholder="Correo electrónico" 
+        autocomplete="email" 
+        required 
+      />
+      <input 
+        type="password" 
+        id="password" 
+        name="password" 
+        placeholder="Contraseña" 
+        autocomplete="current-password" 
+        required 
+      />
 
-                <div class="botones-contenedor">
-                    <button type="submit" class="btn">INICIAR SESION </button>
-                   <a href="../paginas/crearcuenta.html">
-                    <button type="button" class="btn">CREATE ACCOUNT</button>
-                    </a>
-                </div>
-            </form>
-        </div>
-    </div>
+      <p id="message"></p>
+
+      <button type="submit">Iniciar Sesión</button>
+
+      <p class="toggle">
+        ¿No tienes cuenta?
+        <a href="registro.html" id="toggleForm">Regístrate aquí</a>
+      </p>
+    </form>
+  </div>
+
+  <script src="js/auth.js" defer></script>
 </body>
 </html>

@@ -5,439 +5,524 @@
     margin: 0;
 }
 
-/* --- Estilos Generales y Reseteo --- */
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #121212;
-    color: #f5f5f5;
+  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: #fff;
+  color: #000;
+  line-height: 1.6;
 }
 
-/* --- Encabezado y Navegación --- */
-.main-header {
-    position: fixed;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    background: rgba(18, 18, 18, 0.7);
-    z-index: 100;
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-.logo {
-    font-size: 1.5rem;
-    color: #3b2783;
-    font-weight: 700;
+/* ===========================
+   HEADER / NAVBAR
+=========================== */
+.header {
+  background: #200341;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(12, 3, 65, 0.1);
 }
 
-.nav-menu .nav-item {
-    color: #f5f5f5;
-    text-decoration: none;
-    margin-left: 2rem;
-    font-size: 1rem;
-    transition: color 0.3s;
+.navbar {
+  padding: 0;
 }
 
-.nav-menu .nav-item:hover {
-    color: #3b2783;
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-/* --- Sección Destacada con Video --- */
-.featured-movie {
-    position: relative;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    overflow: hidden;
+.nav-brand .logo h1 {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 700;
+  text-decoration: none;
 }
 
-.background-video {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    transform: translate(-50%, -50%);
-    z-index: -2;
+.nav-brand a {
+  text-decoration: none;
 }
 
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6);
-    z-index: -1;
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-left: 30px;
 }
 
-.movie-info {
-    z-index: 1;
-    max-width: 800px;
-    padding: 2rem;
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 8px 0;
+  transition: color 0.2s ease;
+  position: relative;
 }
 
-.movie-title {
-    font-size: 3.5rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    font-family:'Fredoka-VariableFont'
+.nav-link:hover {
+  color: #613396;
 }
 
-.movie-description {
-    font-size: 1.2rem;
-    line-height: 1.6;
-    margin-bottom: 2rem;
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: #8208bb;
 }
 
-.actions {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
-.action-button {
-    padding: 0.8rem 1.5rem;
-    border: none;
-    border-radius: 5px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: background-color 0.3s;
+.search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
 }
 
-.primary-button {
-    background-color:#3b2783;
-    color: #fff;
+.search-input {
+  background: #fff;
+  border: 2px solid #7511c7;
+  border-radius: 30px;
+  padding: 8px 40px 8px 16px;
+  font-size: 14px;
+  width: 300px;
+  outline: none;
+  transition: all 0.2s ease;
 }
 
-.primary-button:hover {
-    background-color: #3b2783;
+.search-input:focus {
+  box-shadow: 0 0 0 3px rgba(22, 1, 210, 0.2);
 }
 
-.secondary-button {
-    background-color: rgba(255, 255, 255, 0.2);
-    color: #fff;
-    border: 1px solid rgba(255, 255, 255, 0.5);
+.search-btn {
+  position: absolute;
+  right: 4px;
+  background: #9001d2;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s ease;
 }
 
-.secondary-button:hover {
-    background-color: rgba(255, 255, 255, 0.4);
+.search-btn:hover {
+  background: #6200b3;
 }
 
-/* --- Sección de Comentarios --- */
-.comments-section {
-    background-color: #1a1a1a;
-    padding: 3rem 2rem;
-    background: #936bb4;
+.auth-buttons {
+  display: flex;
+  gap: 10px;
 }
 
-.comments-container {
-    max-width: 800px;
-    margin: 0 auto;
-    
+.btn {
+  padding: 8px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  border: none;
 }
 
-.comments-section h3 {
-    font-size: 1.8rem;
-    margin-bottom: 1.5rem;
+.btn-outline {
+  color: #fff;
+  border: 2px solid #fff;
+  background: transparent;
 }
 
-.comment-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    margin-bottom: 2rem;
+.btn-outline:hover {
+  background: #fff;
+  color: #032541;
 }
 
-.comment-form textarea {
-    width: 100%;
-    padding: 0.8rem;
-    background-color: #2c2c2c;
-    border: 1px solid #444;
-    border-radius: 5px;
-    color: #f5f5f5;
-    resize: vertical;
+.btn-primary {
+  background: #7e01d2;
+  color: #032541;
 }
 
-.comment-form button {
-    padding: 0.8rem 1.5rem;
-    background-color: #3b2783;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    font-weight: 700;
-    cursor: pointer;
-    align-self: flex-end;
+.btn-primary:hover {
+  background: #7100b3;
 }
 
-.comment-list {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
+/* ===========================
+   HERO BANNER
+=========================== */
+.hero-banner {
+  background: linear-gradient(to right, rgb(98, 31, 153) 0%, rgb(112, 59, 181) 100%);
+  position: relative;
+  padding: 60px 0;
+  overflow: hidden;
 }
 
-.comment-item {
-    background-color: #2c2c2c;
-    padding: 1rem;
-    border-radius: 8px;
-    font-family:'Fredoka-VariableFont'
-    
+.hero-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 200"><defs><pattern id="grain" patternUnits="userSpaceOnUse" width="100" height="100"><circle cx="25" cy="25" r="1" fill="%23ffffff" fill-opacity="0.1"/><circle cx="75" cy="75" r="1" fill="%23ffffff" fill-opacity="0.05"/><circle cx="50" cy="10" r="1" fill="%23ffffff" fill-opacity="0.08"/></pattern></defs><rect width="1000" height="200" fill="url(%23grain)"/></svg>') repeat;
+  opacity: 0.1;
 }
 
-.comment-author {
-    font-weight: 700;
-    margin-bottom: 0.5rem;
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-.comment-text {
-    line-height: 1.5;
-    font-family:'Fredoka-VariableFont'
+.hero-text {
+  max-width: 800px;
 }
 
-.comment-actions {
-    margin-top: 1rem;
-    display: flex;
-    gap: 0.5rem;
+.hero-title {
+  color: #fff;
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 0;
+  line-height: 1;
 }
 
-.comment-actions button {
-    background: none;
-    border: none;
-    color: #3b2783;
-    font-size: 0.8rem;
-    cursor: pointer;
+.hero-subtitle {
+  color: #fff;
+  font-size: 32px;
+  font-weight: 300;
+  margin-bottom: 40px;
+  line-height: 1.2;
 }
 
-/* --- Carruseles de Películas --- */
-.movie-carousels {
-    padding: 3rem 0;
-    background-color: #121212;
-    background: #3b2783;
+.hero-search {
+  display: flex;
+  max-width: 600px;
+  background: #fff;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
-.movie-carousels h3 {
-    font-size: 1.8rem;
-    margin-left: 2rem;
-    margin-bottom: 1.5rem;
-    font-family:'Fredoka-VariableFont'
+.hero-search input {
+  flex: 1;
+  border: none;
+  padding: 16px 20px;
+  font-size: 16px;
+  outline: none;
 }
 
-.carousel-container {
-    display: flex;
-    overflow-x: auto;
-    gap: 1.5rem;
-    padding: 0 2rem;
-    scroll-snap-type: x mandatory;
+.hero-search input::placeholder {
+  color: #999;
 }
 
-.carousel-container::-webkit-scrollbar {
-    display: none;
+.search-btn-hero {
+  background: linear-gradient(to right, #1f4e79, #6301d2);
+  color: #fff;
+  border: none;
+  padding: 16px 24px;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+  min-width: 80px;
+}
+
+.search-btn-hero:hover {
+  opacity: 0.9;
+}
+
+/* ===========================
+   CONTENT SECTIONS
+=========================== */
+.content-section {
+  padding: 30px 0;
+}
+
+.section-header {
+  margin-bottom: 20px;
+}
+
+.section-title-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.section-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #000;
+}
+
+.section-switcher {
+  display: flex;
+  border: 1px solid #000;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.switcher-btn {
+  background: transparent;
+  border: none;
+  padding: 6px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: #000;
+}
+
+.switcher-btn.active {
+  background: #000;
+  color: #fff;
+}
+
+.switcher-btn:hover:not(.active) {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+/* ===========================
+   MOVIE CARDS
+=========================== */
+.horizontal-scroll {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 10px 0 20px;
+  margin: 0 -5px;
+}
+
+.horizontal-scroll::-webkit-scrollbar {
+  height: 8px;
+}
+
+.horizontal-scroll::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.horizontal-scroll::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 10px;
+}
+
+.horizontal-scroll::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+.movie-cards-container {
+  display: flex;
+  gap: 20px;
+  padding: 0 5px;
+  min-width: max-content;
 }
 
 .movie-card {
-    flex: 0 0 auto;
-    width: 200px;
-    scroll-snap-align: start;
-    cursor: pointer;
-    transition: transform 0.3s;
+  flex-shrink: 0;
+  width: 150px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  position: relative;
 }
 
 .movie-card:hover {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
-.movie-card img {
-    width: 100%;
-    border-radius: 8px;
-    object-fit: cover;
+.movie-poster {
+  width: 150px;
+  height: 225px;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background: #dbdbdb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.card-info {
-    font-weight: 700;
-    margin-top: 0.5rem;
-    text-align: center;
+.movie-poster img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.2s ease;
 }
 
-
-/* Estilos para el Dropdown */
-.dropdown {
-    position: relative;
-    display: inline-block;
+.movie-card:hover .movie-poster img {
+  transform: scale(1.1);
 }
 
-.dropbtn {
-    border: none;
-    background: none;
-    cursor: pointer;
-    font-size: 1rem;
-    color: #f5f5f5;
-    transition: color 0.3s;
-    
+.movie-info {
+  padding: 10px 4px 0;
 }
 
-.dropbtn:hover {
-    color: #e50914;
+.movie-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 4px;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.movie-date {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.movie-rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.rating-circle {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 700;
+  color: #fff;
+  position: relative;
+}
+
+.rating-circle.high {
+  background: #21d07a;
+}
+
+.rating-circle.medium {
+  background: #4a31d5;
+}
+
+.rating-circle.low {
+  background: #db2360;
+}
+
+/* ===========================
+   LOADING STATES
+=========================== */
+.loading-cards {
+  display: flex;
+  gap: 20px;
+}
+
+.movie-card-skeleton {
+  width: 150px;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.movie-card-skeleton::before {
+  content: '';
+  display: block;
+  width: 150px;
+  height: 225px;
+  background: #e0e0e0;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.movie-card-skeleton::after {
+  content: '';
+  display: block;
+  width: 80%;
+  height: 16px;
+  background: #e0e0e0;
+  border-radius: 4px;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* ===========================
+   USER MENU
+=========================== */
+.user-menu {
+  position: relative;
+}
+
+.user-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #8501d2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #032541;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.user-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  min-width: 200px;
+  z-index: 1000;
+  display: none;
+  margin-top: 8px;
+}
+
+.user-dropdown.active {
+  display: block;
 }
 
 .dropdown-content {
-    display: none; /* Esto oculta el menú */
-    position: absolute;
-    background-color: #1a1a1a;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5);
-    z-index: 10;
-    left: 50%;
-    transform: translateX(-50%); /* Centra el menú horizontalmente */
-    top: 100%; /* Lo coloca justo debajo del botón */
-    border-radius: 5px;
-    padding: 0.5rem 0;
+  padding: 8px 0;
 }
 
-.dropdown-content a {
-    color: #f5f5f5;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-    transition: background-color 0.3s;
-}
-
-.dropdown-content a:hover {
-    background-color: #2c2c2c;
-}
-
-/* Esta clase es la que el JavaScript agregará para mostrar el menú */
-.dropdown-content.show {
-    display: block;
-}
-
-/* --- Media Queries (Responsividad) --- */
-@media (max-width: 768px) {
-    .main-header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    .nav-menu {
-        margin-top: 1rem;
-        width: 100%;
-        display: flex;
-        justify-content: space-around;
-    }
-    .nav-menu .nav-item {
-        margin-left: 0;
-    }
-
-    .movie-title {
-        font-size: 2.5rem;
-    }
-    
-    .movie-description {
-        font-size: 1rem;
-    }
-
-    .movie-card {
-        width: 150px;
-    }
-}
-
-
-/* Estilos para el ranking de la película */
-.movie-rating-score {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #ffd700; /* Color dorado para el ranking */
-    margin-bottom: 1rem;
-}
-
-/* Estilos para el sistema de estrellas en el formulario */
-.rating-input {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.stars {
-    display: inline-block;
-    unicode-bidi: bidi-override;
-    direction: rtl; /* Para que las estrellas se alinien de derecha a izquierda */
-    font-size: 2rem;
-    color: #888; /* Color de las estrellas sin seleccionar */
-}
-
-.stars .star {
-    display: inline-block;
-    cursor: pointer;
-}
-
-/* Estilo para las estrellas al pasar el mouse por encima o cuando están seleccionadas */
-.stars .star:hover,
-.stars .star:hover ~ .star,
-.stars .star.selected,
-.stars .star.selected ~ .star {
-    color: #ffd700; /* Color dorado para el hover y la selección */
-}
-
-/* Nuevos Estilos para Comentarios Individuales */
-.comment-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 0.5rem;
-}
-
-.comment-rating-score {
-    font-size: 0.9rem;
-    font-weight: bold;
-    color: #ffd700;
-}
-
-.comment-actions {
-    margin-top: 1rem;
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-}
-
-.comment-actions button {
-    background: none;
-    border: none;
-    color: #f5f5f5;
-    cursor: pointer;
-    font-size: 0.9rem;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    transition: color 0.3s;
-}
-
-.comment-actions .like-review-btn:hover {
-    color: #28a745; /* Verde */
-}
-
-.comment-actions .dislike-review-btn:hover {
-    color: #dc3545; /* Rojo */
-}
-
-/* Estilo para los botones cuando están activos (JavaScript los agregará) */
-.comment-actions .like-review-btn.active {
-    color: #28a745;
-}
-
-.comment-actions .dislike-review-btn.active {
-    color: #dc3545;
-}
-
-/* Estilos para el nuevo menú de ordenamiento */
-.sort-dropdown .dropdown-content {
-    min-width: 180px;
+.dropdown-item {
+  display: block;
+  padding: 12px 16px;
+  color: #000;
+  text-decoration: none;
+  font-size: 14px;
+  transition: background 0.2s ease;
 }

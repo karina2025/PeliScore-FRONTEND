@@ -40,71 +40,98 @@ body {
     object-fit: cover; /* Asegura que el video cubra toda el área */
 }
 
-.login-container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-   
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.login-box {
-    background-color:#e3d3fb;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 400px; 
-    text-align: center;
-    border: 5px solid #e6e6e6;
-    background: #38383800; /* negro semi-transparente */
-    backdrop-filter: blur(10px);
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
+}
+
+/* Overlay oscuro */
+.overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.65);
+  z-index: 1;
+}
+
+/* Caja login */
+.login-container {
+  z-index: 2;
+  background: rgba(0,0,0,0.8);
+  padding: 2rem;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 350px;
+  text-align: center;
+  color: #fff;
 }
 
 .logo {
-    width: 120px;
-    margin-bottom: 20px;
+  color: #8d09e5;
+  font-size: 2rem;
+  margin-bottom: 1rem;
 }
 
-h2 {
-    color: #ffffff;
-    margin-bottom: 20px;
-    
+form h2 {
+  margin-bottom: 1rem;
 }
 
-.input-group {
-    margin-bottom: 15px;
+input {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
 }
 
-.input-group input {
-    width: 100%;
-    padding: 10px;
-    border: 2px solid #ffffff;
-    border-radius: 5px;
-    box-sizing: border-box; 
-    font-family:'concertOne';
+button {
+  width: 100%;
+  padding: 12px;
+  background: #9f09e5;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.3s ease;
 }
 
-.btn {
-    width: 100%;
-    padding: 10px;
-    background-color:#3b2783; 
-    border: none;
-    border-radius: 5px;
-    color: #ffffff;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    font-family:'Fredoka-VariableFont';
+button:hover {
+  background: #a906f4;
 }
 
-.btn:hover {
-    background-color:#936bb4; 
+.toggle {
+  margin-top: 1rem;
+  font-size: 0.9rem;
 }
 
-.botones-contenedor {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+.toggle a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+  .logo {
+    font-size: 1.5rem;
+  }
+  .login-container {
+    padding: 1.5rem;
+  }
 }
